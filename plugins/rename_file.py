@@ -172,7 +172,7 @@ async def rename_doc(bot, message):
             reply_markup = InlineKeyboardMarkup(buttons)
             await bot.send_message(
                 chat_id=message.chat.id
-                text="<i><b>Do you want to sent this file in your channel?</i></b>,
+                text="<i><b>Do you want to sent this file in your channel?</i></b>",
                 reply_markup=reply_markup
             )
 
@@ -184,16 +184,16 @@ async def rename_doc(bot, message):
                 os.remove(thumb_image_path)
             except:
                 pass  
-            try:
-                await bot.edit_message_text(
-                    text=script.AFTER_SUCCESSFUL_UPLOAD_MSG,
-                    chat_id=message.chat.id,
-                    message_id=sendmsg.message_id,
-                    disable_web_page_preview=True
-                )
-            except:
-                await sendmsg.delete()
-                await message.reply_text(script.AFTER_SUCCESSFUL_UPLOAD_MSG, quote=True)
+           # try:
+           #     await bot.edit_message_text(
+           #         text=script.AFTER_SUCCESSFUL_UPLOAD_MSG,
+           #         chat_id=message.chat.id,
+           #         message_id=sendmsg.message_id,
+           #         disable_web_page_preview=True
+           #     )
+           # except:
+           #     await sendmsg.delete()
+           #     await message.reply_text(script.AFTER_SUCCESSFUL_UPLOAD_MSG, quote=True)
                 
     else:
         await bot.send_message(
