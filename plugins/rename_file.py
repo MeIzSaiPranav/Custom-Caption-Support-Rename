@@ -144,13 +144,24 @@ async def rename_doc(bot, message):
                 img.save(thumb_image_path, "JPEG")
 
             c_time = time.time()
+            buttons = [[
+                InlineKeyboardButton('CHANNEL 1', callback_data='chnl1'),
+                InlineKeyboardButton('CHANNEL 2', callback_data='chnl2')
+            ],[
+                InlineKeyboardButton('CHANNEL 3', callback_data='chnl3'),
+                InlineKeyboardButton('CHANNEL 4', callback_data='chnl4')
+            ],[
+                InlineKeyboardButton('CHANNEL 5', callback_data='chnl5'),
+                InlineKeyboardButton('CHANNEL 6', callback_data='chnl6')
+            ]]
+            reply_markup = InlineKeyboardMarkup(buttons)
             await bot.send_document(
                 chat_id=message.chat.id,
                 document=new_file_name,
                 thumb=thumb_image_path,
                 parse_mode="md",
                 caption=script.CAPTION.format(file_name),
-                # reply_markup=reply_markup,
+                reply_markup=reply_markup,
                 reply_to_message_id=message.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
