@@ -144,6 +144,21 @@ async def rename_doc(bot, message):
                 img.save(thumb_image_path, "JPEG")
 
             c_time = time.time()
+            msg = await bot.send_document(
+                chat_id=message.chat.id,
+                document=new_file_name,
+                thumb=thumb_image_path,
+                parse_mode="md",
+                caption=script.CAPTION.format(file_name),
+                #reply_markup=reply_markup,
+                reply_to_message_id=message.reply_to_message.message_id,
+                progress=progress_for_pyrogram,
+                progress_args=(
+                    script.UPLOAD_START,
+                    sendmsg, 
+                    c_time
+                )
+            )
             buttons = [[
                 InlineKeyboardButton('CHANNEL 1', callback_data='chnl1'),
                 InlineKeyboardButton('CHANNEL 2', callback_data='chnl2')
@@ -155,20 +170,10 @@ async def rename_doc(bot, message):
                 InlineKeyboardButton('CHANNEL 6', callback_data='chnl6')
             ]]
             reply_markup = InlineKeyboardMarkup(buttons)
-            await bot.send_document(
-                chat_id=message.chat.id,
-                document=new_file_name,
-                thumb=thumb_image_path,
-                parse_mode="md",
-                caption=script.CAPTION.format(file_name),
-                reply_markup=reply_markup,
-                reply_to_message_id=message.reply_to_message.message_id,
-                progress=progress_for_pyrogram,
-                progress_args=(
-                    script.UPLOAD_START,
-                    sendmsg, 
-                    c_time
-                )
+            await bot.send_message(
+                chat_id=message.chat.id
+                text="<i><b>Do you want to sent this file in your channel?</i></b>,
+                reply_markup=reply_markup
             )
 
             try:
