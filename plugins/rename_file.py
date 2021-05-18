@@ -27,6 +27,12 @@ from hachoir.parser import createParser
 from PIL import Image
 from database.database import *
 
+channel_1 = Config.CHANNEL_NAME_1
+channel_2 = Config.CHANNEL_NAME_2
+channel_3 = Config.CHANNEL_NAME_3
+channel_4 = Config.CHANNEL_NAME_4
+channel_5 = Config.CHANNEL_NAME_5
+channel_6 = Config.CHANNEL_NAME_6
 
 async def force_name(bot, message):
 
@@ -160,14 +166,14 @@ async def rename_doc(bot, message):
                 )
             )
             buttons = [[
-                InlineKeyboardButton('CHANNEL 1', callback_data='chnl1'),
-                InlineKeyboardButton('CHANNEL 2', callback_data='chnl2')
+                InlineKeyboardButton(f"{channel_1}", callback_data='chnl1'),
+                InlineKeyboardButton(f"{channel_2}", callback_data='chnl2')
             ],[
-                InlineKeyboardButton('CHANNEL 3', callback_data='chnl3'),
-                InlineKeyboardButton('CHANNEL 4', callback_data='chnl4')
+                InlineKeyboardButton(f"{channel_3}", callback_data='chnl3'),
+                InlineKeyboardButton(f"{channel_4}", callback_data='chnl4')
             ],[
-                InlineKeyboardButton('CHANNEL 5', callback_data='chnl5'),
-                InlineKeyboardButton('CHANNEL 6', callback_data='chnl6')
+                InlineKeyboardButton(f"{channel_5}", callback_data='chnl5'),
+                InlineKeyboardButton(f"{channel_6}", callback_data='chnl6')
             ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await bot.send_message(
