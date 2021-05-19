@@ -201,3 +201,10 @@ async def rename_doc(bot, message):
             text="You're B A N N E D",
             reply_to_message_id=message.message_id
         )
+
+@Client.on_callback_query(filters.private & filters.regex(r'^chnl1$'))
+async def channel_button(bot, update):
+    await update.answer()
+    await bot.msg.copy(
+        chat_id=Config.CHANNEL_ID_1
+    )  
