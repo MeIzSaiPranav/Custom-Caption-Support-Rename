@@ -4,7 +4,7 @@ from plugins.help_text import rename_cb, cancel_extract
 from plugins.rename_file import force_name
 
 
-@Client.on_callback_query(filters.regex(str("rename_button","cancel_e")))
+@Client.on_callback_query(filters.regex(int("rename_button","cancel_e")))
 async def cb_handler(bot, update):
         
     if "rename_button" in update.data:
