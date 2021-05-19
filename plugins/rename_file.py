@@ -191,9 +191,9 @@ async def rename_doc(bot, message):
             except:
                 pass  
             try:
+                await sendmsg.delete()
             except:
                 pass
-                await sendmsg.delete()
                 
     else:
         await bot.send_message(
