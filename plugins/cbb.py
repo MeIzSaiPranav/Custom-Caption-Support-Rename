@@ -4,7 +4,7 @@ from plugins.help_text import rename_cb, cancel_extract
 from plugins.rename_file import force_name
 
 
-@Client.on_callback_query()
+@Client.on_callback_query(filters.regex("rename_button","cancel_e"))
 async def cb_handler(bot, update):
         
     if "rename_button" in update.data:
@@ -13,9 +13,4 @@ async def cb_handler(bot, update):
     elif "cancel_e" in update.data:
         await update.message.delete()
         await cancel_extract(bot, update.message)
-    elif "chnl1" in update.data:
-        await bot.copy_message(
-            chat_id=Config.CHANNEL_ID_1,
-            from_chat_id=update.chat.id
-        )
  
