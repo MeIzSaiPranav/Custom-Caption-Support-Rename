@@ -17,7 +17,7 @@ else:
 from script import script
 
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply, CallbackQuery
 
 from plugins.helpers import progress_for_pyrogram
 
