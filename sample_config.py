@@ -11,17 +11,17 @@ class Config(object):
     CHUNK_SIZE = 128
     DB_URI = os.environ.get("DATABASE_URL", "")
     CAPTION = os.environ.get("CAPTION", "")
-    CHANNEL_NAME_1 = os.environ.get("CHANNEL_NAME_1", "CHANNEL 1")
+    CHANNEL_NAME_1 = os.environ.get("CHANNEL_NAME_1", "ㅤ")
     CHANNEL_ID_1 = int(os.environ.get("CHANNEL_ID_1", 12345))
-    CHANNEL_NAME_2 = os.environ.get("CHANNEL_NAME_2", "CHANNEL 2")
+    CHANNEL_NAME_2 = os.environ.get("CHANNEL_NAME_2", "ㅤ")
     CHANNEL_ID_2 = int(os.environ.get("CHANNEL_ID_2", 12345))
-    CHANNEL_NAME_3 = os.environ.get("CHANNEL_NAME_3", "CHANNEL 3")
+    CHANNEL_NAME_3 = os.environ.get("CHANNEL_NAME_3", "ㅤ")
     CHANNEL_ID_3 = int(os.environ.get("CHANNEL_ID_3", 12345))
-    CHANNEL_NAME_4 = os.environ.get("CHANNEL_NAME_4", "CHANNEL 4")
+    CHANNEL_NAME_4 = os.environ.get("CHANNEL_NAME_4", "ㅤ")
     CHANNEL_ID_4 = int(os.environ.get("CHANNEL_ID_4", 12345))
-    CHANNEL_NAME_5 = os.environ.get("CHANNEL_NAME_5", "CHANNEL 5")
+    CHANNEL_NAME_5 = os.environ.get("CHANNEL_NAME_5", "ㅤ")
     CHANNEL_ID_5 = int(os.environ.get("CHANNEL_ID_5", 12345))
-    CHANNEL_NAME_6 = os.environ.get("CHANNEL_NAME_6", "CHANNEL 6")
+    CHANNEL_NAME_6 = os.environ.get("CHANNEL_NAME_6", "ㅤ")
     CHANNEL_ID_6 = int(os.environ.get("CHANNEL_ID_6", 12345))
 
 
