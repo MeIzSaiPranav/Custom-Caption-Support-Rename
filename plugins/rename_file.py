@@ -190,15 +190,15 @@ async def rename_doc(bot, message):
                 os.remove(thumb_image_path)
             except:
                 pass  
-           # try:
+            try:
            #     await bot.edit_message_text(
            #         text=script.AFTER_SUCCESSFUL_UPLOAD_MSG,
            #         chat_id=message.chat.id,
            #         message_id=sendmsg.message_id,
            #         disable_web_page_preview=True
            #     )
-           # except:
-           #     await sendmsg.delete()
+            except:
+                await sendmsg.delete()
            #     await message.reply_text(script.AFTER_SUCCESSFUL_UPLOAD_MSG, quote=True)
                 
     else:
