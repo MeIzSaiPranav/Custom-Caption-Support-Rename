@@ -26,6 +26,7 @@ from hachoir.parser import createParser
 
 from PIL import Image
 from database.database import *
+from plugins.rename_file import msg
 
 channel_1 = Config.CHANNEL_NAME_1
 channel_2 = Config.CHANNEL_NAME_2
@@ -208,5 +209,11 @@ async def rename_doc(bot, message):
             reply_to_message_id=message.message_id
         )
 
+@Client.on_callback_query(filters.regex(r'^chnl1$'))
+async def chnl1(bot, update):
+    await update.answer()
+    await msg.copy_message(
+        chat_id=Config.CHANNEL_ID_1
+    )
 
 
