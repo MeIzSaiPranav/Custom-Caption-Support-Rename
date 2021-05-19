@@ -15,7 +15,7 @@ async def cb_handler(bot, update):
         await cancel_extract(bot, update.message)
     elif "chnl1" in update.data:
         await bot.copy_message(
-            chat_id=Config.update.chat_id,
-            from_chat_id=Config.CHANNEL_ID_1
+            chat_id=Config.CHANNEL_ID_1,
+            from_chat_id=update.chat.id
         )
  
