@@ -1,7 +1,7 @@
 from pyrogram import Client
 from sample_config import Config
 from plugins.help_text import rename_cb, cancel_extract
-from plugins.rename_file import force_name, msg
+from plugins.rename_file import force_name
 
 
 @Client.on_callback_query()
