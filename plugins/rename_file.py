@@ -212,8 +212,11 @@ async def rename_doc(bot, message):
 @Client.on_callback_query(filters.regex(r'^chnl1$'))
 async def chnl1(bot, update):
     await update.answer()
-    await msg.copy_message(
+    await update.msg.copy_message(
         chat_id=Config.CHANNEL_ID_1
     )
+    await bot.sent_message(
+        chat_id=update.chat.id,
+        text=f"<i>File Sent to <b>{channel_1}</b> Successfully</i>"
 
 
