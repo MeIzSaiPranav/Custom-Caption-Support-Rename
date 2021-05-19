@@ -177,7 +177,7 @@ async def rename_doc(bot, message):
             ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await bot.send_message(
-                chat_id=message.chat.id
+                chat_id=message.chat.id,
                 text="<i><b>Do you want to sent this file in your channel?</i></b>",
                 reply_markup=reply_markup
             )
